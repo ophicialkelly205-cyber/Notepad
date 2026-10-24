@@ -172,10 +172,15 @@
             <button class="export-btn" onclick="exportNote()">
                 Export Note
             </button>
+
+       <button class="save-btn" 
+      onclick="saveNote()">
+              Save Note
+              </button>
         </div>
 
         <p class="status" id="status">
-            Your notes are saved automatically.
+            Your notes are saved manually.
         </p>
 
         <input
@@ -275,15 +280,9 @@
             displayNotes();
         }
 
-        // Automatically save after typing
+        // Manually save after typing
         function scheduleSave() {
-            status.textContent = "Saving...";
-
-            clearTimeout(saveTimer);
-
-            saveTimer = setTimeout(
-                saveCurrentNote,
-                400
+            status.textContent = "Save...";
             );
         }
 
